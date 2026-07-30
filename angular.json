@@ -22,6 +22,9 @@
           "skipTests": true,
           "type": "directive"
         },
+        "@schematics/angular:interface": {
+          "type": "interface"
+        },
         "@schematics/angular:guard": {
           "skipTests": true,
           "typeSeparator": "."

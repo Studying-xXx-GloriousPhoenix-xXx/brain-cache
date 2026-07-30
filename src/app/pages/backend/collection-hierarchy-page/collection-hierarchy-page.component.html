@@ -1,0 +1,48 @@
+<header class="header">
+    <h1 class="text">C# Collection Map</h1>
+</header>
+<main class="main">
+    <aside class="legend">
+        @for (tag of legendTags; track tag) {
+            <ng-container *ngTemplateOutlet="tagTemplate; context: { $implicit: tag }"></ng-container>
+        }
+    </aside>
+    <section class="tree-wrapper">
+        <ul class="collection-tree">
+            <ng-container *ngTemplateOutlet="treeNode; context: { nodes: collectionTree }"></ng-container>
+        </ul>
+    </section>
+</main>
+<footer class="footer">
+    <p class="text">Based on Microsoft .NET documentation</p>
+</footer>
+
+<ng-template #tagTemplate let-item>
+    <span class="legend-item">
+        <span class="tag tag-{{item}}">{{ item }}</span> 
+        <span class="comment">{{ item | legendTag }}</span>
+    </span>
+</ng-template>
+
+<ng-template #treeNode let-nodes="nodes">
+    @for (node of nodes; track node) {
+        <li class="node-item">
+            <div class="row">
+                @if (node.tag) {
+                    <span class="tag tag-{{node.tag}}">{{node.tag}}</span>
+                }
+                <span class="name">{{node.name}}</span>
+            </div>
+        
+            @if (node.description) {
+                <p class="desc">{{node.description}}</p>
+            }
+        
+            @if (node.children && node.children.length) {
+                <ul class="node-list">
+                    <ng-container *ngTemplateOutlet="treeNode; context: { nodes: node.children }"></ng-container>
+                </ul>
+            }
+        </li>
+    }
+</ng-template>
