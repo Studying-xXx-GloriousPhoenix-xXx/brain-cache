@@ -4,10 +4,12 @@ import { LEGEND_TAGS } from './constants/legend-tag';
 import { LegendTagPipe } from './pipes/legend-tag.pipe';
 import { NgTemplateOutlet } from '@angular/common';
 import { CollectionNode } from './interfaces/collection-node.interface';
+import { SvgIconComponent } from "../../../common-ui/svg-icon/svg-icon.component";
+import { RouterLink } from "@angular/router";
 
 @Component({
     selector: 'app-collection-hierarchy-page',
-    imports: [LegendTagPipe, NgTemplateOutlet],
+    imports: [LegendTagPipe, NgTemplateOutlet, SvgIconComponent, RouterLink],
     templateUrl: './collection-hierarchy-page.component.html',
     styleUrl: './collection-hierarchy-page.component.scss',
 })
