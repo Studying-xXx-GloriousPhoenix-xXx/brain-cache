@@ -18,6 +18,18 @@ export class GitPageComponent {
     }> = [
         {
             block: {
+                name: 'Основные команды',
+                content: [
+                    { command: 'git clone <url>', description: 'склонировать репозиторий' },
+                    { command: 'git pull', description: 'забрать изменения и слить с текущей веткой' },
+                    { command: 'git fetch', description: 'забрать изменения без слияния' },
+                    { command: 'git log', description: 'показать историю коммитов' },
+                ],
+            },
+            colors: { text: 'rgb(225,245,238)', bg: 'rgb(15,110,86)' },
+        },
+        {
+            block: {
                 name: 'Индексация (staging)',
                 content: [
                     { command: 'git status', description: 'смотрит статус файлов' },
@@ -37,6 +49,17 @@ export class GitPageComponent {
                 ],
             },
             colors: { text: 'rgb(245,196,179)', bg: 'rgb(113,43,19)' },
+        },
+        {
+            block: {
+                name: 'Ветки и переключение',
+                content: [
+                    { command: 'git restore file.txt', description: 'современный аналог checkout -- (откатить файл)' },
+                    { command: 'git switch branch-name', description: 'переключиться на ветку' },
+                    { command: 'git switch -c branch-name', description: 'создать ветку и переключиться' },
+                ],
+            },
+            colors: { text: 'rgb(244,192,209)', bg: 'rgb(114,36,62)' },
         },
         {
             block: {
@@ -63,6 +86,17 @@ export class GitPageComponent {
         },
         {
             block: {
+                name: 'Слияние и синхронизация',
+                content: [
+                    { command: 'git merge feature-branch', description: 'влить ветку в текущую (FF по умолчанию)' },
+                    { command: 'git rebase <sha1>', description: 'перенести коммиты на новую базу' },
+                    { command: 'git cherry-pick <sha1>', description: 'перенести один коммит в текущую ветку' },
+                ],
+            },
+            colors: { text: 'rgb(192,221,151)', bg: 'rgb(39,80,10)' },
+        },
+        {
+            block: {
                 name: 'Remote и безопасный откат',
                 content: [
                     { command: 'git push', description: 'отправить коммиты на удалённый репозиторий' },
@@ -70,6 +104,69 @@ export class GitPageComponent {
                 ],
             },
             colors: { text: 'rgb(181,212,244)', bg: 'rgb(12,68,124)' },
+        },
+        {
+            block: {
+                name: 'Remote-репозитории',
+                content: [
+                    { command: 'git remote add <name> <url>', description: 'добавить удалённый репозиторий' },
+                    { command: 'git remote -v', description: 'показать список origin с адресами' },
+                    { command: 'git remote show <name>', description: 'подробная информация об origin' },
+                    { command: 'git push -u origin branch-name', description: 'отправить новую ветку и привязать к remote' },
+                ],
+            },
+            colors: { text: 'rgb(133,183,235)', bg: 'rgb(4,44,83)' },
+        },
+        {
+            block: {
+                name: 'Теги',
+                content: [
+                    { command: 'git tag tag-name', description: 'создать тег на коммите' },
+                    { command: 'git tag --list', description: 'показать все теги' },
+                    { command: 'git push --tags', description: 'отправить теги на remote' },
+                    { command: 'git checkout tag-name', description: 'переключиться на тег' },
+                ],
+            },
+            colors: { text: 'rgb(211,209,199)', bg: 'rgb(68,68,65)' },
+        },
+        {
+            block: {
+                name: 'Stash',
+                content: [
+                    { command: 'git stash save "..."', description: 'сохранить изменения во временный буфер' },
+                    { command: 'git stash list', description: 'показать список stash' },
+                    { command: 'git stash apply', description: 'применить, оставить в списке' },
+                    { command: 'git stash drop', description: 'удалить из списка' },
+                    { command: 'git stash pop', description: 'применить и удалить (apply + drop)' },
+                ],
+            },
+            colors: { text: 'rgb(247,193,193)', bg: 'rgb(121,31,31)' },
+        },
+        {
+            block: {
+                name: 'Стратегии workflow',
+                content: [
+                    { command: 'Centralized', description: 'всё в master, конфликты решаются там же' },
+                    { command: 'Feature-branch workflow', description: 'ветки на фичи, merge в master по готовности' },
+                    { command: 'Gitflow', description: 'строгая модель веток: main/develop/feature/release/hotfix' },
+                    { command: 'Integration manager workflow', description: 'один "blessed repo", менеджер сводит пул-реквесты' },
+                    { command: 'Dictator & lieutenants', description: 'иерархия: разработчики → лейтенанты → диктатор → blessed repo' },
+                    { command: 'Forking workflow', description: 'форки + pull request в оригинальный репозиторий' },
+                ],
+            },
+            colors: { text: 'rgb(207,209,209)', bg: 'rgb(44,44,42)' },
+        },
+        {
+            block: {
+                name: 'Прочие инструменты',
+                content: [
+                    { command: 'git blame -L 10,25 file.txt', description: 'показать авторов строк 10–25' },
+                    { command: 'git bisect', description: 'бинарный поиск коммита, сломавшего код' },
+                    { command: 'git rerere', description: 'запоминает разрешение конфликтов слияния' },
+                    { command: 'git submodule', description: 'встраивает сторонний репозиторий как поддиректорию' },
+                ],
+            },
+            colors: { text: 'rgb(197,164,246)', bg: 'rgb(48,28,88)' },
         },
     ];
 }

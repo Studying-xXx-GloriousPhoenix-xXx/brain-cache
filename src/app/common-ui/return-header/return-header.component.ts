@@ -1,6 +1,6 @@
 import { Component, inject, input } from '@angular/core';
 import { SvgIconComponent } from "../svg-icon/svg-icon.component";
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
@@ -11,10 +11,17 @@ import { Location } from '@angular/common';
 })
 export class ReturnHeaderComponent {
     private readonly location = inject(Location);
+    private readonly router = inject(Router);
+    private readonly route = inject(ActivatedRoute);
 
     name = input.required<string>();
 
     protected goBack() {
-        this.location.back();
+        if (window.history.length > 1) {
+            this.location.back()
+        }
+        else {
+            this.router.navigate(["../"], { relativeTo: this.route });
+        }
     }
 }
