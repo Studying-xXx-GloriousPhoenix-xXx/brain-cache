@@ -112,6 +112,7 @@ export class GitPageComponent {
                     { command: 'git remote add <name> <url>', description: 'добавить удалённый репозиторий' },
                     { command: 'git remote -v', description: 'показать список origin с адресами' },
                     { command: 'git remote show <name>', description: 'подробная информация об origin' },
+                    { command: 'git remote remove origin', description: 'удалить связь с удалённым репозиторием' },
                     { command: 'git push -u origin branch-name', description: 'отправить новую ветку и привязать к remote' },
                 ],
             },
@@ -144,6 +145,18 @@ export class GitPageComponent {
         },
         {
             block: {
+                name: 'Прочие инструменты',
+                content: [
+                    { command: 'git blame -L 10,25 file.txt', description: 'показать авторов строк 10–25' },
+                    { command: 'git bisect', description: 'бинарный поиск коммита, сломавшего код' },
+                    { command: 'git rerere', description: 'запоминает разрешение конфликтов слияния' },
+                    { command: 'git submodule', description: 'встраивает сторонний репозиторий как поддиректорию' },
+                ],
+            },
+            colors: { text: 'rgb(197,164,246)', bg: 'rgb(48,28,88)' },
+        },
+        {
+            block: {
                 name: 'Стратегии workflow',
                 content: [
                     { command: 'Centralized', description: 'всё в master, конфликты решаются там же' },
@@ -155,18 +168,6 @@ export class GitPageComponent {
                 ],
             },
             colors: { text: 'rgb(207,209,209)', bg: 'rgb(44,44,42)' },
-        },
-        {
-            block: {
-                name: 'Прочие инструменты',
-                content: [
-                    { command: 'git blame -L 10,25 file.txt', description: 'показать авторов строк 10–25' },
-                    { command: 'git bisect', description: 'бинарный поиск коммита, сломавшего код' },
-                    { command: 'git rerere', description: 'запоминает разрешение конфликтов слияния' },
-                    { command: 'git submodule', description: 'встраивает сторонний репозиторий как поддиректорию' },
-                ],
-            },
-            colors: { text: 'rgb(197,164,246)', bg: 'rgb(48,28,88)' },
         },
     ];
 }
