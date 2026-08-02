@@ -1,0 +1,9 @@
+<h1 class="name">{{data().name}}</h1>
+<ul class="list">
+    @for (item of data().content; track item.command) {
+        <li>
+            <span class="command">{{item.command}}</span>
+            <span class="description">{{item.description}}</span>
+        </li>
+    }
+</ul>

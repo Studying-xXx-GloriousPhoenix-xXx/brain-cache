@@ -1,0 +1,66 @@
+:host {
+    --compass-size: 8em;
+    display: inline-block;
+}
+
+.wrapper {
+    position: relative;
+    width: var(--compass-size);
+    height: var(--compass-size);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.btn {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    background-color: var(--green-color);
+    transition: var(--basic-transition);
+    color: var(--dark-color);
+
+    &:hover {
+        background-color: var(--dark-color);
+        color: var(--bright-color);
+    }
+
+    span {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        width: 3.4em;
+        font-size: 0.65em;
+        line-height: 1.15;
+        text-align: center;
+    }
+
+    &.frontend {
+        clip-path: polygon(
+            50% 50%,
+            50% 0%,
+            0% 0%,
+            0% 100%
+        );
+        span { left: 25%; top: 37%; }
+    }
+
+    &.backend {
+        clip-path: polygon(
+            50% 50%,
+            50% 0%,
+            100% 0%,
+            100% 100%
+        );
+        span { left: 75%; top: 37.5%; }
+    }
+
+    &.tools {
+        clip-path: polygon(
+            50% 50%,
+            0% 100%,
+            100% 100%
+        );
+        span { left: 50%; top: calc(500% / 6); }
+    }
+}

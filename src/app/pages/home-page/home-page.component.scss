@@ -1,0 +1,11 @@
+:host {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+}
+
+.map {
+    position: absolute;
+    display: flex;
+    padding: 1em;
+}

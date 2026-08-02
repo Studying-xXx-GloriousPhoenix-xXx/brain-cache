@@ -1,0 +1,8 @@
+<app-return-header name="Github" />
+<main class="wrapper">
+    @for (item of data; track item.block.name) {
+        <div class="item">
+            <app-topic-block [data]="item.block" [color]="item.colors.text" [bgColor]="item.colors.bg" />
+        </div>
+    }
+</main>
