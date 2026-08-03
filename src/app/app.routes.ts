@@ -4,6 +4,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { GitPageComponent } from './pages/tools/git-page/git-page.component';
 import { BackendPageComponent } from './pages/backend/backend-page/backend-page.component';
 import { ToolPageComponent } from './pages/tools/tool-page/tool-page.component';
+import { FrontendPageComponent } from './pages/frontend/frontend-page/frontend-page.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: 'full' },
@@ -15,9 +16,10 @@ export const routes: Routes = [
             { path: "collection-hierarchy", component: CollectionHierarchyPageComponent }
         ]
     },
-    // {
-    //     path: "frontend"
-    // },
+    {
+        path: "frontend", component: FrontendPageComponent,
+        children: []
+    },
     {
         path: "tools",
         children: [

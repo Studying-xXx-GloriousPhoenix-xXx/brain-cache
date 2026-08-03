@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink } from "@angular/router";
+import { RouteButtonComponent } from "../../../common-ui/route-button/route-button.component";
+import { ReturnHeaderComponent } from "../../../common-ui/return-header/return-header.component";
 
 @Component({
     selector: 'app-tool-page',
-    imports: [RouterLink],
+    imports: [RouteButtonComponent, ReturnHeaderComponent],
     templateUrl: './tool-page.component.html',
     styleUrl: './tool-page.component.scss',
 })
