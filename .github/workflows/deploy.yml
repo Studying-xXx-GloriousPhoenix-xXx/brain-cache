@@ -26,6 +26,11 @@ jobs:
       - name: Build
         run: npx ng build --base-href=/brain-cache/
 
+      - name: Configure git
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+      
       - name: Deploy to gh-pages
         run: npx angular-cli-ghpages --dir=dist/brain-cache/browser
                 
