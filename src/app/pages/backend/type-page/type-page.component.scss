@@ -1,0 +1,12 @@
+:host {
+    display: flex;
+    padding: 1em;
+    gap: 1em;
+    flex-flow: column nowrap;
+}
+
+.main {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+}

@@ -8,9 +8,10 @@
     flex-shrink: 0;
 }
   
-svg {
+.icon {
     display: block;
     width: 100%;
     height: 100%;
     fill: currentColor;
+    transition: var(--basic-transition);
 }

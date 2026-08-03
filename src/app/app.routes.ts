@@ -5,6 +5,7 @@ import { GitPageComponent } from './pages/tools/git-page/git-page.component';
 import { BackendPageComponent } from './pages/backend/backend-page/backend-page.component';
 import { ToolPageComponent } from './pages/tools/tool-page/tool-page.component';
 import { FrontendPageComponent } from './pages/frontend/frontend-page/frontend-page.component';
+import { TypePageComponent } from './pages/backend/type-page/type-page.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: 'full' },
@@ -13,6 +14,7 @@ export const routes: Routes = [
         path: "backend",
         children: [
             { path: "", component: BackendPageComponent },
+            { path: "type", component: TypePageComponent },
             { path: "collection-hierarchy", component: CollectionHierarchyPageComponent }
         ]
     },

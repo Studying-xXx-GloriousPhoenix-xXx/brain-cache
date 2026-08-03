@@ -1,0 +1,22 @@
+<header
+    class="header"
+    [style.border-bottom]="isHidden() ? 'none' : '1px solid var(--green-color)'"
+>
+    <h2 class="group-name">{{group().name}}</h2>
+    <app-svg-icon
+        class="show-icon"
+        name="down"
+        (click)="toggleShow()"
+        [rotated]="!isHidden()"
+    />
+</header>
+<div class="group-content-wrapper" [class.collapsed]="isHidden()">
+    <div class="group-content">
+        @for (type of group().types; track type.name) {
+            <app-type-card
+                [data]="type"
+                [partition]="group().partition"
+            />
+        }
+    </div>
+</div>

@@ -1,0 +1,64 @@
+:host {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.4em;
+
+    border-radius: 1em;
+    padding: 1em;
+    overflow: hidden;
+
+    &.signed {
+        background: rgb(60, 52, 137, 0.35);
+        color: rgb(206, 203, 246);
+    }
+
+    &.unsigned {
+        background: rgb(15, 110, 86, 0.35);
+        color: rgb(159, 225, 203);
+    }
+}
+
+.type-info {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 0.5em;
+
+    & > .suffix {
+        margin-left: auto;
+    }
+}
+
+.name {
+    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.clr-name {
+    font-size: 0.85em;
+    opacity: 0.75;
+}
+
+.size {
+    padding: 0.1em 0.6em;
+    border-radius: 0.4em;
+    background: rgb(0 0 0 / 20%);
+    font-size: 0.8em;
+}
+
+.range {
+    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+    font-size: 0.85em;
+    opacity: 0.85;
+    word-break: break-word;
+}
+
+.suffix {
+    align-self: flex-start;
+    padding: 0.1em 0.6em;
+    border-radius: 0.4em;
+    border: 1px solid currentColor;
+    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+    font-size: 0.8em;
+}

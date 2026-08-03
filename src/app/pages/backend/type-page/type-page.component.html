@@ -1,0 +1,7 @@
+<app-return-header name="C# Types" />
+<main class="main">
+    @for (group of groups; track group) {
+        <app-type-group [group]="group" />
+    }
+</main>
+<app-source-footer source="Microsoft .NET documentation" />

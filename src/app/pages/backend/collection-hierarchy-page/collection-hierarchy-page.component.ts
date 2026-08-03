@@ -5,10 +5,11 @@ import { LegendTagPipe } from './pipes/legend-tag.pipe';
 import { NgTemplateOutlet } from '@angular/common';
 import { CollectionNode } from './interfaces/collection-node.interface';
 import { ReturnHeaderComponent } from "../../../common-ui/return-header/return-header.component";
+import { SourceFooterComponent } from "../../../common-ui/source-footer/source-footer.component";
 
 @Component({
     selector: 'app-collection-hierarchy-page',
-    imports: [LegendTagPipe, NgTemplateOutlet, ReturnHeaderComponent],
+    imports: [LegendTagPipe, NgTemplateOutlet, ReturnHeaderComponent, SourceFooterComponent],
     templateUrl: './collection-hierarchy-page.component.html',
     styleUrl: './collection-hierarchy-page.component.scss',
 })
