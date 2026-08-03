@@ -19,5 +19,9 @@ export class SvgIconComponent {
     viewBox = input<string>('0 0 24 24');
     rotated = input<boolean>(false);
 
-    protected path = computed(() => `${document.baseURI}assets/svgs/${this.name()}.svg#${this.name()}`);
+    protected path = computed(() => {
+        const computedPath = `${document.baseURI}assets/svgs/${this.name()}.svg#${this.name()}`;
+        console.log(computedPath);
+        return computedPath;
+    });
 }
