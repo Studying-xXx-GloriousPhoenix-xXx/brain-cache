@@ -1,0 +1,8 @@
+<header class="header" [style.border-bottom]="description() ? '1px solid var(--yellow-color)' : 'none'">
+    <h2 class="name">{{ name() }}</h2>
+</header>
+@if (description()) {
+    <main class="main">
+        <p class="description">{{ description() }}</p>
+    </main>
+}

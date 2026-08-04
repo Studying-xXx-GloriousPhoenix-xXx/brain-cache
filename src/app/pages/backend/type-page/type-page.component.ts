@@ -3,10 +3,11 @@ import { ReturnHeaderComponent } from "../../../common-ui/return-header/return-h
 import { TypeGroupComponent } from "./type-group/type-group.component";
 import { CSharpTypeGroup } from './interfaces/c-sharp-type-group.interface';
 import { SourceFooterComponent } from "../../../common-ui/source-footer/source-footer.component";
+import { AddNoteComponent } from "../../../common-ui/add-note/add-note.component";
 
 @Component({
     selector: 'app-type-page',
-    imports: [ReturnHeaderComponent, TypeGroupComponent, SourceFooterComponent],
+    imports: [ReturnHeaderComponent, TypeGroupComponent, SourceFooterComponent, AddNoteComponent],
     templateUrl: './type-page.component.html',
     styleUrl: './type-page.component.scss',
 })

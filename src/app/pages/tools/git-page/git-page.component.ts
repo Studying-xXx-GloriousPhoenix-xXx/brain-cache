@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { TopicBlockComponent } from '../../../common-ui/topic-block/topic-block.component';
 import { TopicBlock } from '../../../data/interfaces/topic-block.interface';
 import { ReturnHeaderComponent } from "../../../common-ui/return-header/return-header.component";
+import { AddNoteComponent } from "../../../common-ui/add-note/add-note.component";
 
 @Component({
     selector: 'app-git-page',
-    imports: [TopicBlockComponent, ReturnHeaderComponent],
+    imports: [TopicBlockComponent, ReturnHeaderComponent, AddNoteComponent],
     templateUrl: './git-page.component.html',
     styleUrl: './git-page.component.scss',
 })
