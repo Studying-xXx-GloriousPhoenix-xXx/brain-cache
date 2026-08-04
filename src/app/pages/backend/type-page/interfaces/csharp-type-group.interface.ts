@@ -1,4 +1,4 @@
-import { CSharpType } from "./c-sharp-type.interface";
+import { CSharpType } from "./csharp-type.interface";
 
 export interface CSharpTypeGroup {
     name: string;

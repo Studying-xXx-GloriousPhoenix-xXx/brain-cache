@@ -7,3 +7,18 @@
     }
 </div>
 <span class="range">{{ data().range }}</span>
+
+@if (data().memory; as memory) {
+    <div class="layout-bar">
+        @for (segment of memory.layout; track segment.label) {
+            <span
+                class="layout-segment"
+                [class]="'kind-' + segment.kind"
+                [style.flex]="segment.bits"
+                [title]="segment.label + ': ' + segment.bits + ' бит'"
+            >{{ segment.bits }}</span>
+        }
+    </div>
+    <p class="layout-order">{{ layoutOrder() }}</p>
+    <p class="formula">{{ memory.formula }}</p>
+}

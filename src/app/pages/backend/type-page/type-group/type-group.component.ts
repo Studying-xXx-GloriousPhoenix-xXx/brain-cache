@@ -1,6 +1,6 @@
 import { Component, input, signal } from '@angular/core';
 import { TypeCardComponent } from "../type-card/type-card.component";
-import { CSharpTypeGroup } from '../interfaces/c-sharp-type-group.interface';
+import { CSharpTypeGroup } from '../interfaces/csharp-type-group.interface';
 import { SvgIconComponent } from "../../../../common-ui/svg-icon/svg-icon.component";
 
 @Component({
