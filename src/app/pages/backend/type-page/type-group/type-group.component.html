@@ -10,7 +10,7 @@
         [rotated]="!isHidden()"
     />
 </header>
-<div class="group-content-wrapper" [class.collapsed]="isHidden()">
+<main class="group-content-wrapper" [class.collapsed]="isHidden()">
     <div class="group-content">
         @for (type of group().types; track type.name) {
             <app-type-card
@@ -19,4 +19,4 @@
             />
         }
     </div>
-</div>
+</main>

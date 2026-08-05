@@ -30,7 +30,6 @@
 }
 
 .name {
-    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
     font-size: 1.1em;
     font-weight: 600;
 }
@@ -48,7 +47,6 @@
 }
 
 .range {
-    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
     font-size: 0.85em;
     opacity: 0.85;
     word-break: break-word;
@@ -59,6 +57,46 @@
     padding: 0.1em 0.6em;
     border-radius: 0.4em;
     border: 1px solid currentColor;
-    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
     font-size: 0.8em;
+}
+
+.layout-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    border-radius: 0.4em;
+    overflow: hidden;
+    height: 1.6em;
+    font-size: 0.7em;
+}
+
+.layout-segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-color);
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 1em;
+
+    &.kind-sign { background: rgb(244, 192, 209); }
+    &.kind-exponent { background: rgb(250, 199, 117); }
+    &.kind-mantissa { background: rgb(159, 225, 203); }
+    &.kind-scale { background: rgb(250, 199, 117); }
+    &.kind-integer { background: rgb(159, 225, 203); }
+    &.kind-unused { background: rgb(211, 209, 199); opacity: 0.4; }
+}
+
+.layout-order {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.4em;
+    margin: 0;
+    font-size: 0.75em;
+    opacity: 0.8;
+}
+
+.formula {
+    font-size: 0.8em;
+    opacity: 0.8;
+    margin: 0;
 }

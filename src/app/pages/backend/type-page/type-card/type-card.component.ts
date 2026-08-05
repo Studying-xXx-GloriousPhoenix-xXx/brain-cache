@@ -1,5 +1,5 @@
-import { Component, input, signal } from '@angular/core';
-import { CSharpType } from '../interfaces/c-sharp-type.interface';
+import { Component, computed, input, signal } from '@angular/core';
+import { CSharpType } from '../interfaces/csharp-type.interface';
 
 @Component({
     selector: 'app-type-card',
@@ -21,5 +21,11 @@ export class TypeCardComponent {
             }
             return value;
         }
+    });
+
+    protected readonly layoutOrder = computed(() => {
+        const memory = this.data().memory;
+        if (!memory) return '';
+        return memory.layout.map(seg => `[${seg.kind}: ${seg.bits}]`).join(' ');
     });
 }
